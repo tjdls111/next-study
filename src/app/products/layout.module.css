@@ -1,0 +1,13 @@
+.subTitle{
+  font-size: 16px;
+  text-align: center;
+  margin: 4px 0px;
+  color:aliceblue;
+}
+
+.nav{
+  display: flex;
+  gap: 8px;
+  margin: 4px;
+  justify-content: space-between;
+}

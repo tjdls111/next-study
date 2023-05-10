@@ -2,6 +2,8 @@
   font-size: 20px;
   padding: 4px;
   color:pink;
+  text-align: center;
+  margin: 4px 0px;
 }
 
 .nav{
@@ -10,4 +12,6 @@
   display:flex;
   gap:8px;
   color:aquamarine;
+  text-align: center;
+  margin: 4px 0px;
 }
