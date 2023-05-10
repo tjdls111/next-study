@@ -5,6 +5,13 @@ type Props = {
     slug:string;
   }
 }
+import type { Metadata } from 'next';
+
+export async function generateMetadata({ params }:Props): Promise<Metadata> {
+  return { title: `product | ${params.slug}`};
+}
+
+
 export default function Item(props:Props) {
 console.log(props)
 

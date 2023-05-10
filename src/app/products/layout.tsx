@@ -1,6 +1,13 @@
 import Link from 'next/link';
 import React from 'react';
 import styles from './layout.module.css'
+import type { Metadata } from 'next';
+ 
+export const metadata: Metadata = {
+  title: 'product',
+  description: 'awesome product',
+};
+ 
 
 export default function layout({
   children,
