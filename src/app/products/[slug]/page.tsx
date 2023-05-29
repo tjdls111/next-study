@@ -6,28 +6,32 @@ type Props = {
   }
 }
 import type { Metadata } from 'next';
+import { getProduct, getProducts } from '@/service/products';
 
 export async function generateMetadata({ params }:Props): Promise<Metadata> {
   return { title: `product | ${params.slug}`};
 }
 
 
-export default function Item(props:Props) {
-console.log(props)
+export default async function Item(props:Props) {
+const product = await getProduct(props.params.slug)
 
-if (props.params.slug === '404'){
+if (!product){
   notFound()
 }
   return (
     <div>
-      Name: {props.params.slug}
+      Name: {product.name}
+      <br/>
+      Description: {product.description}
+
     </div>
   );
 }
 
-export function generateStaticParams(){
-  const products = ['chocolate','candy']
+export const  generateStaticParams = async () =>{
+  const products = await getProducts()
   return products.map(product => ({
-    slug: product
+    slug: product.id
   }))
 }

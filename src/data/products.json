@@ -1,0 +1,32 @@
+[
+  {
+    "id":"1",
+    "name":"icecream",
+    "description":"sweet"
+  },
+  {
+    "id":"2",
+    "name":"dalgona",
+    "description":"sweet"
+  },
+    {
+    "id":"3",
+    "name":"cookie",
+    "description":"sweet"
+  },
+    {
+    "id":"4",
+    "name":"bread",
+    "description":"sweet"
+  },
+    {
+    "id":"5",
+    "name":"candy",
+    "description":"sweet"
+  },
+    {
+    "id":"6",
+    "name":"chocolate",
+    "description":"sweet"
+  }
+]

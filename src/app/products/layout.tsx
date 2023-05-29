@@ -2,6 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import styles from './layout.module.css'
 import type { Metadata } from 'next';
+import { getProducts } from '@/service/products';
  
 export const metadata: Metadata = {
   title: 'product',
@@ -9,25 +10,25 @@ export const metadata: Metadata = {
 };
  
 
-export default function layout({
+export default async function layout({
   children,
 }: {
   children: React.ReactNode
 }) {
+  const products = await getProducts()
   return (
-    <div>
+     <div>
       <hr/>
-        <h2 className={styles.subTitle}>products</h2>
-        <nav className={styles.nav}>
-          <Link href="/products/pants">Pants</Link>
-          <Link href="/products/shirts">Shirts</Link>
-          <Link href="/products/necklace">Neck lace</Link>
-          <Link href="/products/earring">Ear ring</Link>
-        </nav>
-      <hr/>
-        {children}
-
-    </div>
+      <h2 className={styles.subTitle}>products</h2>
+      <nav className={styles.nav}>
+        {
+          products.map((product,idx) => (
+            <Link key={idx} href={`/products/${product.id}`}>{product.name}</Link>
+            ))}
+          </nav>
+          <hr/>
+          {children}
+      </div>
   );
 }
 
