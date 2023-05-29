@@ -29,9 +29,9 @@ if (!product){
   );
 }
 
-export const  generateStaticParams = async () =>{
-  const products = await getProducts()
-  return products.map(product => ({
-    slug: product.id
-  }))
-}
+// export const  generateStaticParams = async () =>{
+//   const products = await getProducts()
+//   return products.map(product => ({
+//     slug: product.id
+//   }))
+// }
