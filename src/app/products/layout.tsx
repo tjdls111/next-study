@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './layout.module.css'
 import type { Metadata } from 'next';
 import { getProducts } from '@/service/products';
+import FunArticle from '@/components/FunArticle';
  
 export const metadata: Metadata = {
   title: 'product',
@@ -16,11 +17,14 @@ export default async function layout({
   children: React.ReactNode
 }) {
   const products = await getProducts()
+
   return (
-     <div>
+    <div>
+      <FunArticle/>
+
       <hr/>
-      <h2 className={styles.subTitle}>products</h2>
       <nav className={styles.nav}>
+      <h2 className={styles.subTitle}>products</h2>
         {
           products.map((product,idx) => (
             <Link key={idx} href={`/products/${product.id}`}>{product.name}</Link>

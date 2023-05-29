@@ -1,9 +1,10 @@
 import React from 'react';
 
-export default function Products() {
+export default async function Products() {
+
   return (
     <div>
-      products
+      Products
     </div>
   );
 }
