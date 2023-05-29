@@ -7,6 +7,7 @@ type Props = {
 }
 import type { Metadata } from 'next';
 import { getProduct, getProducts } from '@/service/products';
+import Image from 'next/image';
 
 export async function generateMetadata({ params }:Props): Promise<Metadata> {
   return { title: `product | ${params.slug}`};
@@ -24,6 +25,7 @@ if (!product){
       Name: {product.name}
       <br/>
       Description: {product.description}
+      <Image src="https://picsum.photos/id/642/300/200" width="200" height="300" alt='img'/>
 
     </div>
   );
